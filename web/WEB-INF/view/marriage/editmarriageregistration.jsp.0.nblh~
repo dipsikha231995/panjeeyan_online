@@ -1,0 +1,397 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
+
+        <script src="http://code.jquery.com/jquery-latest.js"> </script>
+        <script>
+            $(document).ready(function(){
+                $("#IfPresentPermanentSame").click(function(){
+                    if ($("#IfPresentPermanentSame").val()==0) {
+                        $("#IfPresentPermanentSame").val("1");
+                        //$('#panelpermanentaddress input ').val($('#panelpresentaddress input').val());
+                        $("#BridePermanentVillage").val($('#BrideVillage').val());
+                        $("#BridePermanentPO").val($("#BridePostOffice").val());
+                        $("#BridePermanentPS").val($("#BridePoliceStation").val());
+                        $("#BridePermanentDistrict").val($("#BrideDistrict").val());
+                        $("#BridePermanentState").val($("#BrideState").val());
+                        $("#BridePermanentPincode").val($("#BridePincode").val());
+                    }
+                    else {
+                        $("#IfPresentPermanentSame").val("0");
+                        $('#panelpermanentaddress input ').val("");
+                    }
+                });
+                
+                $("#IfPresentPermanentSamegrm").click(function(){
+                        $("#GroomPermanentVillage").val($('#GroomVillage').val());
+                        $("#GroomPermanentPO").val($("#GroomPostOffice").val());
+                        $("#GroomPermanentPS").val($("#GroomPoliceStation").val());
+                        $("#GroomPermanentDistrict").val($("#GroomDistrict").val());
+                        $("#GroomPermanentState").val($("#GroomState").val());
+                        $("#GroomPermanentPincode").val($("#GroomPincode").val());
+                   
+                });
+            });
+        </script>
+        <div id="container" > <!----container---->
+       <div class="panel panel-info"><!----panel---->
+            <div class="panel-heading">
+                <h2 class="panel-title">Edit  marriage details</h2>
+            </div>
+            <div class="panel-body">
+               <form class="form-horizontal" role="form" action="updatemarriageregistration" method="POST">
+                 <div class="form-group">
+                    <label class=" col-sm-3 col-sm-3 control-label" for="ApplicationDate">Comcase No</label>
+                     <div class="col-sm-3 ">
+                         <input type="text" class="form-control" id="comcaseno" name="comcaseno" readonly="readonly" value="${spmarrige.comcaseno}"/>
+                     </div>
+                    <label class="col-sm-3 col-sm-3 control-label" for="MarriageType">Marriage Type</label>
+                     <div class="col-sm-3">
+                          <select name="MarriageType" class="form-control" id="MarriageType">
+                                <option value="">Select Marriage Type</option>
+                                <option value="Old">Old</option>
+                                <option value="New">New</option>
+                          </select>
+                     </div>
+                 </div>
+                 <div class="form-group">
+                   <label class=" col-sm-3 col-sm-3 control-label" for="ApplicationDate">Date of Marriage Perform</label>
+                   <div class="col-sm-3 ">
+                         <input type="text" class="form-control" id="DateMarriagePerform" name="DateMarriagePerform" value="${spmarrige.dtregist}"/>
+                   </div>
+                   <label class="col-sm-3 col-sm-3 control-label" for="RegistrationType">Registration Type</label>
+                            <div class="col-sm-3">
+                                <select name="RegistrationType" class="form-control" id="RegistrationType">
+                                    <option value="">Select Reg Type</option>
+                                    <option value="Commissioned">Commissioned</option>
+                                    <option value="Office">Office</option>
+                                </select>
+                            </div>
+                 </div>
+                 <div class="panel panel-default">
+                    <div class="panel-heading" style="color: black">Bride  Details</div>
+                    <div class="panel-body">
+                       <div class="form-group">
+                            <label class="col-sm-3 col-sm-3 control-label" for="BrideName">Name of Bride <span class="glyphicon glyphicon-star"></span></label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="BrideName" name="BrideName" value="${spmarrige.bridename}" data-validation="custom" data-validation-regexp="^([a-zA-Z ]+)$"  data-validation-error-msg="Input should contain alphabets only"/>
+                            </div>
+                             <label class="col-sm-2 control-label" for="BrideAge">Age <span class="glyphicon glyphicon-star"></span></label>
+                            <div class="col-sm-2 ">
+                                <input type="text" class="form-control" id="BrideAge" name="BrideAge" value="${spmarrige.brideage}" data-validation="number" data-validation-error-msg="Numeric values only"/>
+                            </div>
+                        </div>
+                                
+                        <div class="form-group">
+                              <label class="col-sm-3 control-label" for="BrideMarriageCondition">Marriage Condition</label>
+                              <div class="col-sm-3 ">
+                                     <select name="BrideMarriageCondition" class="form-control" id="BrideMarriageCondition">
+                                    <option value="">Select Marriage Condition</option>
+                                    <c:forEach items="${marriagecondtn}" var="condition">
+                                        <option value="${condition.marriageCondn}" selected="selected" >${condition.marriageCondn}</option>
+                                    </c:forEach>
+                                </select>
+                              </div>
+                               <label class="col-sm-3 control-label" for="BrideOccupation">Occupation <span class="glyphicon glyphicon-star"></span></label>
+                                <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BrideOccupation" name="BrideOccupation" value="${spmarrige.brideoccu}"/>
+                                </div>
+                        </div>
+                                
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="BrideFathersName">Father's Name <span class="glyphicon glyphicon-star"></span></label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="BrideFathersName" name="BrideFathersName"  value="${spmarrige.bridefather}"/>
+                            </div>
+                        </div> 
+                        <legend>Bride Address</legend>
+                        <div style="float:left;width:50%;">
+                            <div class="form-group">
+                                    <label class="col-sm-6 control-label">Present Address</label>
+                            </div>
+                   
+                   
+                           <div id="panelpresentaddress">
+                               <div class="form-group">
+                                 <label class="col-sm-3 control-label" for="BrideVillage">Village</label>
+                                 <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BrideVillage" name="BrideVillage"  value="${spmarrige.bridevillage}"/>
+                                 </div>
+                                </div>
+                   
+                               <div class="form-group">
+                                <label class="col-sm-3 control-label" for="BridePostOffice">Police Station <span class="glyphicon glyphicon-star"></span></label>
+                               <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BridePoliceStation" name="BridePoliceStation" value="${spmarrige.brideps}"/>
+                                </div>
+                                </div>
+                   
+                               <div class="form-group">
+                                  <label class="col-sm-3 control-label" for="BridePoliceStation">Post Office <span class="glyphicon glyphicon-star"></span></label>
+                                
+                                 <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BridePostOffice" name="BridePostOffice"  value="${spmarrige.bridepo}"/>
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                <label class="col-sm-3 control-label" for="BrideDistrict">District <span class="glyphicon glyphicon-star"></span></label>
+                                <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BrideDistrict" name="BrideDistrict" value="${spmarrige.bridedistrict}"/>
+                                </div>
+                                </div>
+                                 <div class="form-group">
+                                 <label class="col-sm-3 control-label" for="BrideState">State <span class="glyphicon glyphicon-star"></span></label>
+                                <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BrideState" name="BrideState"  value="${spmarrige.bridestate}"/>
+                                </div>
+                                 </div>
+                                 <div class="form-group">
+                                <label class="col-sm-3 control-label" for="BridePincode">Pin code</label>
+                                <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BridePincode" name="BridePincode"  value="${spmarrige.bridepin}"/>
+                                </div>
+                                </div>
+                   
+                       </div><!--------panel present address----->
+                   </div>
+                  <div style="float:right;width:50%;">
+                   <div class="form-group">
+                                <label class="col-sm-7 control-label" for="IfPresentPermanentSame">If same as Present Address</label>
+                                <div class="col-sm-3">
+                                    <input type="checkbox" name="IfPresentPermanentSame" id="IfPresentPermanentSame" value="0">
+                                </div>
+                   </div>
+                    <div id="panelpermanentaddress">
+                    <div class="form-group">
+                     <label class="col-sm-3 control-label" for="BridePermanentVillage">Village</label>
+                                <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BridePermanentVillage" name="BridePermanentVillage"/>
+                                </div>
+                    </div>
+                   
+                   <div class="form-group">
+                     <label class="col-sm-3 control-label" for="BridePermanentPO">Post Office</label>
+                                <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BridePermanentPO" name="BridePermanentPO"/>
+                                </div>
+                    </div>
+                   
+                   <div class="form-group">
+                       <label class="col-sm-3 control-label" for="BridePermanentPS">Police Station</label>
+                                <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BridePermanentPS" name="BridePermanentPS"/>
+                                </div>
+                    </div>
+                   <div class="form-group">
+                     <label class="col-sm-3 control-label" for="BridePermanentDistrict">District</label>
+                                <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BridePermanentDistrict" name="BridePermanentDistrict"/>
+                                </div>
+                    </div>
+                   <div class="form-group">
+                     <label class="col-sm-3 control-label" for="BridePermanentState">State</label>
+                                <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BridePermanentState" name="BridePermanentState"/>
+                                </div>
+                    </div>
+                   <div class="form-group">
+                     <label class="col-sm-3 control-label" for="BridePermanentPincode">Pin code</label>
+                                <div class="col-sm-3 ">
+                                    <input type="text" class="form-control" id="BridePermanentPincode" name="BridePermanentPincode"/>
+                                </div>
+                    </div>
+                    </div>
+<!--                   <div class="form-group">
+                       <label class="col-sm-7 control-label" for="LengthOfResidence">Length of residence at present address in years </label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="LengthOfResidence" name="LengthOfResidence" value="${marriagedetails.brdLenRes}"/>
+                            </div>
+                   </div>-->
+                      
+                      
+              </div><!-- panel permanent address-->
+               
+             </div>
+                    </div>
+                      
+                      
+                      
+                      
+                       <div class="panel panel-default">
+                    <div class="panel-heading" style="color: black">Groom  Details</div>
+                    <div class="panel-body">
+                       <div class="form-group">
+                            <label class="col-sm-3 control-label" for="GroomName">Name of Groom <span class="glyphicon glyphicon-star"></span></label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomName" name="GroomName" value="${spmarrige.bgroomname}"/>
+                            </div>
+                            <label class="col-sm-3 control-label" for="GroomAge">Age <span class="glyphicon glyphicon-star"></span></label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomAge" name="GroomAge" value="${spmarrige.bgroomage}"/>
+                            </div>
+                       </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="GroomMarriageCondition">Marriage Condition</label>
+                                    <div class="col-sm-3 ">
+                                        <select name="GroomMarriageCondition" class="form-control" id="GroomMarriageCondition">
+                                            <option value="">Select Marriage Condition</option>
+                                            <c:forEach items="${marriagecondtn}" var="condition">
+                                                <option value="${condition.marriageCondn}" selected="selected" >${condition.marriageCondn}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                    <label class="col-sm-3 control-label" for="GroomOccupation">Occupation <span class="glyphicon glyphicon-star"></span></label>
+                                    <div class="col-sm-3 ">
+                                        <input type="text" class="form-control" id="GroomOccupation" name="GroomOccupation" value="${spmarrige.bgroomoccu}"/>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="GroomFathersName">Father's Name <span class="glyphicon glyphicon-star"></span></label>
+                                    <div class="col-sm-3 ">
+                                        <input type="text" class="form-control" id="GroomFathersName" name="GroomFathersName" value="${spmarrige.bgroomfather}"/>
+                                    </div>
+                                </div>
+                                    
+                                <legend>Groom Address</legend>
+                                <div style="float:left;width:50%;">
+                                    <div class="form-group">
+                     <label class="col-sm-6 control-label">Present Address</label>
+                 
+                      
+                    </div>
+                   
+                   
+                   <div id="panelpresentaddress">
+                   <div class="form-group">
+                            <label class="col-sm-3 control-label" for="GroomVillage">Village <span class="glyphicon glyphicon-star"></span></label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomVillage" name="GroomVillage" value="${spmarrige.bgroomvillage}"/>
+                            </div>
+                    </div>
+                   
+                   <div class="form-group">
+                           <label class="col-sm-3 control-label" for="GroomPoliceStation">Police Station <span class="glyphicon glyphicon-star"></span></label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomPoliceStation" name="GroomPoliceStation" value="${spmarrige.bgroomps}"/>
+                            </div>
+                    </div>
+                   
+                   <div class="form-group">
+                      <label class="col-sm-3 control-label" for="GroomPostOffice">Post Office <span class="glyphicon glyphicon-star"></span></label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomPostOffice" name="GroomPostOffice" value="${spmarrige.bgroompo}"/>
+                            </div>
+                    </div>
+                   <div class="form-group">
+                           <label class="col-sm-3 control-label" for="GroomDistrict">District <span class="glyphicon glyphicon-star"></span></label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomDistrict" name="GroomDistrict" value="${spmarrige.bgroomdistrict}"/>
+                            </div>
+                    </div>
+                   <div class="form-group">
+                     <label class="col-sm-3 control-label" for="GroomState">State <span class="glyphicon glyphicon-star"></span></label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomState" name="GroomState" value="${spmarrige.bgroomstate}"/>
+                            </div>
+                    </div>
+                   <div class="form-group">
+                    <label class="col-sm-3 control-label" for="GroomPincode">Pin code</label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomPincode" name="GroomPincode" value="${spmarrige.bgroompin}"/>
+                            </div>
+                    </div>
+                   
+                   </div>
+                 </div>
+                  <div style="float:right;width:50%;">
+                   <div class="form-group">
+                            <label class="col-sm-7 control-label" for="IfPresentPermanentSame">If same as Present Address</label>
+                            <div class="col-sm-3">
+                                <input type="checkbox" name="IfPresentPermanentSame" id="IfPresentPermanentSame" value="0">
+                            </div>
+                   </div>
+                    <div id="panelpermanentaddress">
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label" for="GroomPermanentVillage">Village</label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomPermanentVillage" name="GroomPermanentVillage"/>
+                            </div>
+                    </div>
+                   
+                   <div class="form-group">
+                   <label class="col-sm-3 control-label" for="GroomPermanentPO">Post Office</label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomPermanentPO" name="GroomPermanentPO"/>
+                            </div>
+                    </div>
+                   
+                   <div class="form-group">
+                      <label class="col-sm-3 control-label" for="GroomPermanentPS">Police Station</label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomPermanentPS" name="GroomPermanentPS"/>
+                            </div>
+                    </div>
+                   <div class="form-group">
+                     <label class="col-sm-3 control-label" for="GroomPermanentDistrict">District</label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomPermanentDistrict" name="GroomPermanentDistrict"/>
+                            </div>
+                    </div>
+                   <div class="form-group">
+                     <label class="col-sm-3 control-label" for="GroomPermanentState">State</label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="GroomPermanentState" name="GroomPermanentState"/>
+                            </div>
+                    </div>
+                   <div class="form-group">
+                     <label class="col-sm-4 control-label" for="GroomPermanentPincode">Pin code</label>
+                            <div class="col-sm-6 ">
+                                <input type="text" class="form-control" id="GroomPermanentPincode" name="GroomPermanentPincode" value="${marriagedetails.grmPinPrmnt}" data-validation="number"  data-validation-error-msg="Input should contain alphabets only"/>
+                            </div>
+                    </div>
+                    </div>
+                   <div class="form-group">
+                      <label class="col-sm-7 control-label" for="LengthOfResidence">Length of residence at present address in years</label>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="LengthOfResidence" name="LengthOfResidence" value="${marriagedetails.grmLenRes}" data-validation="number"  data-validation-error-msg="Numeric values only"/>
+                            </div>
+                   </div>
+                      
+                      
+              </div><!-- panel permanent address-->
+               
+             </div>
+             </div>
+             <!--------------------------------->
+             <div class="form-group">
+                 <label class="col-sm-3 control-label" for="NoticeFee">Notice Fee &nbsp; &nbsp;<span class="">&#8377</span></label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="NoticeFee" name="NoticeFee" value="2" readonly="readonly"/>
+                    </div>
+             </div><br>
+             
+              <div class="form-group last">
+                    <label class="col-sm-4 control-label"  for="placeholder"></label>
+                    <div class="col-md-5">
+                         <button type="submit" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-save"> Submit</span></button>
+                         <button type="reset" class="btn btn-default btn-sm">Reset</button>
+                    </div>
+                </div>
+            
+             
+                           
+             </form>    
+            </div><!----end panel-body---->
+           
+        </div><!----end panel---->
+        
+    </div> <!--end container-->
+    <script src="js/form-validator/jquery.form-validator.min.js" type="text/javascript"></script>
+    <script>
+        $.validate({
+    });
+    </script>
+   

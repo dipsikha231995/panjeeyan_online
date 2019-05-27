@@ -1,0 +1,42 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<!doctype html>
+<html>
+    <head>
+        <title>e-Panjeeyan</title>
+        <meta name="viewport" content="width=device-width">
+<!--        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self';">-->
+<!--        <meta http-equiv="X-XSS-Protection" content="'1; mode=block' always">-->
+<!--        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" />-->
+        <script src="js/jquery.confirm.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/epanjeeyan.css"/>
+        <link rel="stylesheet" href="bs/css/bootstrap.css"/>
+        <link rel="stylesheet" href="bs/css/datepicker.css"/>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/jquery.jqprint-0.3.js" type="text/javascript"></script>
+        <script src="bs/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="bs/js/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="bs/js/custom.js" type="text/javascript"></script>
+    </head>
+    <body>
+
+        <div class="container transparent-bg">
+            <div class="row head-block">
+                <div class="col-sm-12">		
+                    <div id="divLogo">
+                        <div class="col-sm-5">
+                        <div class="logo" > <img src="resources/logo.png" /> </div>
+                            <h2 class="head-1" id="divTagLine"><strong>e-PANJEEYAN </strong></h2>
+                        </div>
+                        <div class="col-sm-7">
+                            <h5 class="head-2" id="divTagLine"><strong>REVENUE AND DISASTER MANAGEMENT DEPARTMENT</strong></h5>
+                            <h5 class='head-2' id="divTagLine"><strong>Government of Assam</strong></h5>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+ 
+
+

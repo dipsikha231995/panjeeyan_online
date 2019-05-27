@@ -1,0 +1,319 @@
+.glyphicon-star {
+    color: #F75D59 !important;
+}
+#landrelatedpanel, #RegFee, #StampFee {
+    display: none;
+}
+.alert-message
+{
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+}
+.alert-message h4
+{
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.alert-message p:last-child
+{
+    margin-bottom: 0;
+}
+.alert-message code
+{
+    background-color: #fff;
+    border-radius: 3px;
+}
+.alert-message-success
+{
+    background-color: #F4FDF0;
+    border-color: #3C763D;
+}
+.alert-message-success h4
+{
+    color: #3C763D;
+}
+.alert-message-danger
+{
+    background-color: #fdf7f7;
+    border-color: #d9534f;
+}
+.alert-message-danger h4
+{
+    color: #d9534f;
+}
+.alert-message-warning
+{
+    background-color: #fcf8f2;
+    border-color: #f0ad4e;
+}
+.alert-message-warning h4
+{
+    color: #f0ad4e;
+}
+.alert-message-info
+{
+    background-color: #f4f8fa;
+    border-color: #5bc0de;
+}
+.alert-message-info h4
+{
+    color: #5bc0de;
+}
+.alert-message-default
+{
+    background-color: #EEE;
+    border-color: #B4B4B4;
+}
+.alert-message-default h4
+{
+    color: #000;
+}
+.alert-message-notice
+{
+    background-color: #FCFCDD;
+    border-color: #BDBD89;
+}
+.alert-message-notice h4
+{
+    color: #444;
+}
+.form-control{
+  height: 28px !important;
+}
+.form-group {
+  margin-bottom: 3px !important;
+}
+legend {
+  
+  font-size: 18px !important;
+  
+}
+  
+.btn {
+    border: 0;
+    border-bottom: 0;
+    border-left: 0;
+/*    box-shadow: inset 0 -3.2px rgba(0, 0, 0, 0.12), inset 2px 0 rgba(0, 0, 0, 0.1);*/
+    outline: none;
+    text-shadow:0 0 13px rgba(0,0,0,.3);
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;    
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;   
+    box-shadow:        3px 3px 3px 3px #ccc;    
+
+
+/*    position:relative;
+    border:0;
+    border-radius:3px;
+    margin:15px 10px 0 0;
+    transition:all .09s linear;
+    box-shadow:0 0 0 1px transparent inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 6px 6px 0 0 #ccc, 6px 6px 0 1px rgba(0,0,0,0.2), 6px 6px 3px 0px rgba(0,0,0,0.3);
+    outline:medium none;
+    -moz-outline-style:none;*/
+    
+/*    text-shadow:0 0 13px rgba(0,0,0,.3);
+    border:1px solid #bfbfbf;
+    border-radius:5px;box-shadow:0 4px 0 #a5a5a5,0 5px 0 #565656,0 5px 10px rgba(0,0,0,.4);
+    background-color:#f2f2f2;*/
+
+    
+}
+
+.transparent-bg {
+    background-color: rgb(255, 255, 255);
+    border-radius: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.298);
+}
+
+img.india-logo {
+    height:auto;
+    width: 75%;
+    overflow:hidden;
+
+}
+img.egov {
+    height:auto;
+    width: 80%;
+}
+.header-img {
+    /*    background-color: #808080;*/
+    background-image: url("/epanjeeyan/resources/images/2.jpg");
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    margin-bottom: 10px;
+
+
+}
+
+#divSiteTitle {
+    color: #FFFFFF;
+    font-family: Abel;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 4px;
+    line-height: 35px;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.098), 0 -5px 35px rgba(255, 255, 255, 0.298);
+
+}
+#divSiteTitle {
+    text-decoration: none;
+}
+#divTagLine {
+    background-color: transparent;
+    color: #FFFFFF;
+    font-family: Abel;
+    /*    font-size: 22px;*/
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 4px;
+/*    line-height: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+    text-transform: none;
+    margin-top: 20px;*/
+}
+#divTagLine {
+    text-decoration: none;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#heading h1,p{display: inline}
+#heading {float: right;  margin-top: 20px;}
+.container {
+    width: auto;
+}
+/*  .modal-dialog {
+    width: 1000px !important;
+    margin: 60px 60px !important;
+  }*/
+
+/*Message box design begins*/
+.notice {
+    padding: 15px;
+    background-color: #fafafa;
+    border-left: 6px solid #7f7f84;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+       -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+            box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+}
+.notice-sm {
+    padding: 10px;
+    font-size: 80%;
+}
+.notice-lg {
+    padding: 35px;
+    font-size: large;
+}
+.notice-success {
+    border-color: #80D651;
+}
+.notice-success>strong {
+    color: #80D651;
+}
+.notice-info {
+    border-color: #45ABCD;
+}
+.notice-info>strong {
+    color: #45ABCD;
+}
+.notice-warning {
+    border-color: #FEAF20;
+}
+.notice-warning>strong {
+    color: #FEAF20;
+}
+.notice-danger {
+    border-color: #d73814;
+}
+.notice-danger>strong {
+    color: #d73814;
+}
+/*Message box design ends*/
+
+body {
+    background-color: #f4efe9 !important;
+    margin: 0 5%;
+    padding-bottom: 20px;
+}
+.transparent-bg {
+    background-color: rgb(255, 255, 255);
+    border-radius: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.298);
+}
+
+img.india-logo {
+    height:auto;
+    width: 75%;
+    overflow:hidden;
+
+}
+img.egov {
+    height:auto;
+    width: 80%;
+}
+.header-img {
+    background-image: url("/panjeeyanonline/resources/images/2.jpg");
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#divSiteTitle {
+    color: #FFFFFF;
+    font-family: Abel;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 4px;
+    line-height: 35px;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.098), 0 -5px 35px rgba(255, 255, 255, 0.298);
+
+}
+#divSiteTitle {
+    text-decoration: none;
+}
+#divTagLine {
+    background-color: transparent;
+    color: #FFFFFF;
+    font-family: Abel;
+    /*    font-size: 22px;*/
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 4px;
+    line-height: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: none;
+    text-transform: none;
+    margin-top: 20px;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#heading h1,p{display: inline}
+#heading {float: right;  margin-top: 20px;}
+.head-block {
+    background: #72be86 none repeat scroll 0 0;
+}
+.logo {
+    float: left;margin: 5px 15px 5px -5px;
+}
+.logo img {
+    width: 30px;
+}
+
+.head-1 {
+    float:left;text-align: left;letter-spacing: 2px;margin: 0;
+}
+.head-2 {
+    text-align: right;letter-spacing: 2px;
+}
+.captcha-text {
+    margin: 4px 0 0 0;
+}
