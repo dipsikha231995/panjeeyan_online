@@ -32,6 +32,14 @@
         <servlet-name>FileUploadServlet</servlet-name>
         <servlet-class>org.nic.controller.FileUploadServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConfirmAppointmentServlet</servlet-name>
+        <servlet-class>org.nic.controller.ConfirmAppointmentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaymentServlet</servlet-name>
+        <servlet-class>org.nic.controller.PaymentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MarriageDataServelet</servlet-name>
         <url-pattern>/addmarriagedetails</url-pattern>
@@ -73,9 +81,17 @@
         <servlet-name>MarriageAppointmentDatesServlet</servlet-name>
         <url-pattern>/getmarriagedates</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>FileUploadServlet</servlet-name>
         <url-pattern>/fileupload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmAppointmentServlet</servlet-name>
+        <url-pattern>/confirmAppointment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentServlet</servlet-name>
+        <url-pattern>/paymentservlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

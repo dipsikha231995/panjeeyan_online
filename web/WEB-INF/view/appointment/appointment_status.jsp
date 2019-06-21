@@ -11,6 +11,8 @@
                 </c:forEach>
             </div>
         </c:if>
+        
+        
         <form class="form-horizontal" role="form" action="appointment_status" method="post">
             <div class="form-group">
                 <label for="DocRefNo" class="col-sm-4 control-label">

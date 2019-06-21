@@ -303,7 +303,7 @@ public class MarriageDataServelet extends HttpServlet {
           appointmentDto.setAppointmentDate(dbSdf.parse(request.getParameter("appointment_date")));
         }catch (ParseException e) {
         }
-        //appointmentDto.setSlno(slno);
+        appointmentDto.setSlno(slno);
         appointmentDto.setDeedType(0);
         appointmentDto.setDeedSubtype("Marriage");
         appointmentDto.setSroOffice(Integer.parseInt(request.getParameter("sro_office")));
@@ -313,7 +313,11 @@ public class MarriageDataServelet extends HttpServlet {
         appointmentDto.setApplicantAddress(request.getParameter("BrideVillage"));
         appointmentDto.setApplicantType("0");
         
-        appointmentDto.setApplicationDate(new SimpleDateFormat("yyyy-MM-dd").get2DigitYearStart());
+        //appointmentDto.setApplicationDate(new SimpleDateFormat("yyyy-MM-dd").get2DigitYearStart());
+        
+        appointmentDto.setApplicationDate(new Date());
+        
+        
         appointmentDto.setAppointmentDate(dbSdf.parse(dbSdf.format(formSdf.parse(request.getParameter("appointment_date")))));
         Date date = new Date();
         appointmentDto.setApplicationDateTime(date);
@@ -394,6 +398,7 @@ public class MarriageDataServelet extends HttpServlet {
         
         JSONObject json = new JSONObject();
         try {
+            json.put("success", true);
             json.put("appointment_id", temp);
             
         } 
